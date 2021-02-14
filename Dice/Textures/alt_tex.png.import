@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/alt_tex.png-0a69e101668356033d7dd39222dd4833.image"
+
+[deps]
+
+source_file="res://Dice/Textures/alt_tex.png"
+dest_files=[ "res://.import/alt_tex.png-0a69e101668356033d7dd39222dd4833.image" ]
+
+[params]
+

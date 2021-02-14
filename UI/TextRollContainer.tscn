@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/TextRollContainer.gd" type="Script" id=1]
+
+[node name="TextRollContainer" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1401.0
+margin_bottom = -850.0
+rect_min_size = Vector2( 0, 50 )
+script = ExtResource( 1 )
+
+[node name="HSeparator" type="HSeparator" parent="."]
+margin_right = 199.0
+margin_bottom = 4.0
+
+[node name="RollerName" type="Label" parent="."]
+margin_top = 8.0
+margin_right = 199.0
+margin_bottom = 22.0
+text = "Roller Name Here:"

@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/threat.png-db01466ce362fc16ab191ba4017eba91.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/threat.png"
+dest_files=[ "res://.import/threat.png-db01466ce362fc16ab191ba4017eba91.image" ]
+
+[params]
+

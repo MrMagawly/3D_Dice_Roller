@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/force_tex.png-72820efa47b27e98b486ee06391d1758.image"
+
+[deps]
+
+source_file="res://Dice/Textures/force_tex.png"
+dest_files=[ "res://.import/force_tex.png-72820efa47b27e98b486ee06391d1758.image" ]
+
+[params]
+

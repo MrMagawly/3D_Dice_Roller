@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Dice/DiceCam.gd" type="Script" id=1]
+[ext_resource path="res://Dice/DiceHolder.gd" type="Script" id=2]
+[ext_resource path="res://UI/ChatTerminal.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 54.7763, 12.7627, 51.5904 )
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="Environment" id=3]
+background_mode = 1
+background_color = Color( 0.160156, 0.160156, 0.160156, 1 )
+dof_blur_near_enabled = true
+
+[node name="Roller" type="Node"]
+
+[node name="Floor" type="StaticBody" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.4264, 0 )
+shape = SubResource( 1 )
+
+[node name="floor" type="MeshInstance" parent="Floor"]
+transform = Transform( 50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Walls" type="StaticBody" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape4" type="CollisionShape" parent="Walls"]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, -49.1526, 47.2653, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Walls"]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 2.65431e-14, 48.9096, 47.2653, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 44.4273, -47.9171 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 44.4273, 48.8101 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 65.514, 0 )
+projection = 1
+current = true
+size = 76.2337
+far = 508.5
+script = ExtResource( 1 )
+
+[node name="DiceHolder" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="ChatTerminal" parent="." instance=ExtResource( 3 )]
+[connection signal="rolled_narrative" from="DiceHolder" to="ChatTerminal" method="_on_DiceHolder_rolled_narrative"]

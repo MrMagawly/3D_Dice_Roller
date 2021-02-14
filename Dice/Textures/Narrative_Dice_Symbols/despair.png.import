@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/despair.png-6eb553bc963ce3078e5ab4ddd6eddcbf.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/despair.png"
+dest_files=[ "res://.import/despair.png-6eb553bc963ce3078e5ab4ddd6eddcbf.image" ]
+
+[params]
+

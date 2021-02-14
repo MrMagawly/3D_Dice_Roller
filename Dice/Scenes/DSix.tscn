@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Dice/Base/d6.dae" type="PackedScene" id=1]
+[ext_resource path="res://Dice/Scenes/Dice.gd" type="Script" id=2]
+[ext_resource path="res://Dice/Textures/d6_test.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="DSix" index="0" instance=ExtResource( 1 )]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Die_Scaled_D6" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 2 )
+
+[node name="NumberIndicators" type="Node" parent="." index="2"]
+editor/display_folded = true
+
+[node name="6" type="Spatial" parent="NumberIndicators" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="1" type="Spatial" parent="NumberIndicators" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="4" type="Spatial" parent="NumberIndicators" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="2" type="Spatial" parent="NumberIndicators" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="5" type="Spatial" parent="NumberIndicators" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+
+[node name="3" type="Spatial" parent="NumberIndicators" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1 )

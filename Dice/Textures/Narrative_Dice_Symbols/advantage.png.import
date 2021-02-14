@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/advantage.png-6ec612151112f9255e0dd8820a519c9a.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/advantage.png"
+dest_files=[ "res://.import/advantage.png-6ec612151112f9255e0dd8820a519c9a.image" ]
+
+[params]
+

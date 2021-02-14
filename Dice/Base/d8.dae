@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0</authoring_tool>
+    </contributor>
+    <created>2019-02-22T15:23:39</created>
+    <modified>2019-02-22T15:23:39</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="Die_Scaled_D8-mesh" name="Die Scaled D8">
+      <mesh>
+        <source id="Die_Scaled_D8-mesh-positions">
+          <float_array id="Die_Scaled_D8-mesh-positions-array" count="72">-1.296741 0 -0.9166528 0.6481714 -1.122896 -0.916934 -0.6481714 -1.122896 0.916934 0.6481714 1.122896 -0.916934 -0.6481714 1.122896 0.916934 1.296741 0 0.9166528 0.6481714 1.122896 -0.916934 0.6481714 1.122896 -0.916934 0.6481714 1.122896 -0.916934 1.296741 0 0.9166528 1.296741 0 0.9166528 1.296741 0 0.9166528 -0.6481714 -1.122896 0.916934 -0.6481714 -1.122896 0.916934 -0.6481714 -1.122896 0.916934 -0.6481714 1.122896 0.916934 -0.6481714 1.122896 0.916934 -0.6481714 1.122896 0.916934 -1.296741 0 -0.9166528 -1.296741 0 -0.9166528 -1.296741 0 -0.9166528 0.6481714 -1.122896 -0.916934 0.6481714 -1.122896 -0.916934 0.6481714 -1.122896 -0.916934</float_array>
+          <technique_common>
+            <accessor source="#Die_Scaled_D8-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Die_Scaled_D8-mesh-normals">
+          <float_array id="Die_Scaled_D8-mesh-normals-array" count="24">-0.4714527 -0.8164971 -0.3332641 -1.22074e-4 0 -1 -0.4714527 0.8164971 -0.3332641 -0.9427671 0 0.3334522 0.4714527 -0.8164971 0.3332641 0.9427671 0 -0.3334522 0.4714527 0.8164971 0.3332641 1.22074e-4 0 1</float_array>
+          <technique_common>
+            <accessor source="#Die_Scaled_D8-mesh-normals-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Die_Scaled_D8-mesh-map-0">
+          <float_array id="Die_Scaled_D8-mesh-map-0-array" count="48">0.3924885 0.8271325 0.6807345 0.6607137 0.6807345 0.9935513 0.6489495 0.009548962 0.6489495 0.3423867 0.3607035 0.1759678 2.47792e-4 0.6669145 0.3330855 0.6669145 0.1666666 0.9551603 0.6920404 0.3454871 0.6920404 0.01264935 0.9802864 0.1790682 0.9798812 0.6281184 0.9798812 0.9609561 0.6916353 0.7945373 0.2977949 0.1759678 0.009548962 0.3423867 0.009548962 0.009548962 0.01305449 0.4627953 0.3013004 0.2963764 0.3013004 0.6292142 0.6862446 0.4193898 0.9744906 0.2529709 0.9744906 0.5858086</float_array>
+          <technique_common>
+            <accessor source="#Die_Scaled_D8-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Die_Scaled_D8-mesh-vertices">
+          <input semantic="POSITION" source="#Die_Scaled_D8-mesh-positions"/>
+        </vertices>
+        <triangles count="8">
+          <input semantic="VERTEX" source="#Die_Scaled_D8-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Die_Scaled_D8-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Die_Scaled_D8-mesh-map-0" offset="2" set="0"/>
+          <p>19 0 0 21 0 1 13 0 2 18 1 3 7 1 4 1 1 5 0 2 6 15 2 7 6 2 8 20 3 9 2 3 10 4 3 11 22 4 12 9 4 13 12 4 14 3 5 15 5 5 16 23 5 17 16 6 18 10 6 19 8 6 20 14 7 21 11 7 22 17 7 23</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Die_Scaled_D8" name="Die_Scaled_D8" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Die_Scaled_D8-mesh" name="Die_Scaled_D8"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

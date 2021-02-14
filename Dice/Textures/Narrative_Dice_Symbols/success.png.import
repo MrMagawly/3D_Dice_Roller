@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/success.png-695db9d99c19ecf9b67663c470c9057b.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/success.png"
+dest_files=[ "res://.import/success.png-695db9d99c19ecf9b67663c470c9057b.image" ]
+
+[params]
+

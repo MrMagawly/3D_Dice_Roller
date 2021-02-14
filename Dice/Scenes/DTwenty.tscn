@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Dice/Base/d20.dae" type="PackedScene" id=1]
+[ext_resource path="res://Dice/Scenes/Dice.gd" type="Script" id=2]
+[ext_resource path="res://Dice/Textures/d20_test.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="ConvexPolygonShape" id=2]
+points = PoolVector3Array( 1.53914, -2.10195, -0.465154, 1.83845, -0.547345, 1.82319, -0.42498, -2.13446, 1.50565, 1.53914, -2.10195, -0.465154, 2.51245, 0.497113, -0.666331, 1.83845, -0.547345, 1.82319, 1.53914, -2.10195, -0.465154, 0.665573, -0.444496, -2.52249, 2.51245, 0.497113, -0.666331, 1.53914, -2.10195, -0.465154, -1.14986, -2.0709, -1.18013, 0.665573, -0.444496, -2.52249, 1.53914, -2.10195, -0.465154, -0.42498, -2.13446, 1.50565, -1.14986, -2.0709, -1.18013, -0.42498, -2.13446, 1.50565, 1.83845, -0.547345, 1.82319, -0.665573, 0.444497, 2.52249, 1.83845, -0.547345, 1.82319, 2.51245, 0.497113, -0.666331, 1.14986, 2.0709, 1.18013, 2.51245, 0.497113, -0.666331, 0.665573, -0.444496, -2.52249, 0.42498, 2.13446, -1.50565, 0.665573, -0.444496, -2.52249, -1.14986, -2.0709, -1.18013, -1.83845, 0.547346, -1.82319, -1.14986, -2.0709, -1.18013, -0.42498, -2.13446, 1.50565, -2.51245, -0.497112, 0.666331, 1.83845, -0.547345, 1.82319, 1.14986, 2.0709, 1.18013, -0.665573, 0.444497, 2.52249, 2.51245, 0.497113, -0.666331, 0.42498, 2.13446, -1.50565, 1.14986, 2.0709, 1.18013, 0.665573, -0.444496, -2.52249, -1.83845, 0.547346, -1.82319, 0.42498, 2.13446, -1.50565, -1.14986, -2.0709, -1.18013, -2.51245, -0.497112, 0.666331, -1.83845, 0.547346, -1.82319, -0.42498, -2.13446, 1.50565, -0.665573, 0.444497, 2.52249, -2.51245, -0.497112, 0.666331, -0.665573, 0.444497, 2.52249, 1.14986, 2.0709, 1.18013, -1.53914, 2.10195, 0.465154, 1.14986, 2.0709, 1.18013, 0.42498, 2.13446, -1.50565, -1.53914, 2.10195, 0.465154, 0.42498, 2.13446, -1.50565, -1.83845, 0.547346, -1.82319, -1.53914, 2.10195, 0.465154, -1.83845, 0.547346, -1.82319, -2.51245, -0.497112, 0.666331, -1.53914, 2.10195, 0.465154, -2.51245, -0.497112, 0.666331, -0.665573, 0.444497, 2.52249, -1.53914, 2.10195, 0.465154 )
+
+[node name="DTwenty" instance=ExtResource( 1 )]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="Die_Scaled_D20" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+shape = SubResource( 2 )
+
+[node name="NumberIndicators" type="Node" parent="." index="2"]
+
+[node name="14" type="Spatial" parent="NumberIndicators" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04404, 0 )
+
+[node name="13" type="Spatial" parent="NumberIndicators" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.13375, 0 )
+
+[node name="9" type="Spatial" parent="NumberIndicators" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28305, 1.45911, -0.334794 )
+
+[node name="8" type="Spatial" parent="NumberIndicators" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41978, 1.37828, 1.35087 )
+
+[node name="18" type="Spatial" parent="NumberIndicators" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.924588, 1.43259, -0.993989 )
+
+[node name="17" type="Spatial" parent="NumberIndicators" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.189416, 0.826386, -1.9355 )
+
+[node name="19" type="Spatial" parent="NumberIndicators" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15249, 0.800588, -1.51145 )
+
+[node name="3" type="Spatial" parent="NumberIndicators" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77966, 0.746402, 0.87111 )
+
+[node name="15" type="Spatial" parent="NumberIndicators" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797194, 0.797484, 1.67839 )
+
+[node name="10" type="Spatial" parent="NumberIndicators" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53808, 0.812633, 1.10635 )
+
+[node name="5" type="Spatial" parent="NumberIndicators" index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83522, 0.81768, -0.157514 )
+
+[node name="11" type="Spatial" parent="NumberIndicators" index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85774, -0.587853, -1.78467 )
+
+[node name="2" type="Spatial" parent="NumberIndicators" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82242, -0.631221, -0.758352 )
+
+[node name="4" type="Spatial" parent="NumberIndicators" index="13"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25824, -0.756639, 1.93529 )
+
+[node name="12" type="Spatial" parent="NumberIndicators" index="14"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2181, -0.57183, 1.63222 )
+
+[node name="7" type="Spatial" parent="NumberIndicators" index="15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90737, -0.618962, 0.113236 )
+
+[node name="20" type="Spatial" parent="NumberIndicators" index="16"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5454, -0.680037, -1.22542 )
+
+[node name="16" type="Spatial" parent="NumberIndicators" index="17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06352, -1.47958, 1.0235 )
+
+[node name="1" type="Spatial" parent="NumberIndicators" index="18"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42117, -1.44454, 0.334824 )
+
+[node name="6" type="Spatial" parent="NumberIndicators" index="19"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465724, -1.44937, -1.4875 )

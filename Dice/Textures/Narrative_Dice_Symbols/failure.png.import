@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/failure.png-f9cfecde7ff09b4e4a894a74090b440a.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/failure.png"
+dest_files=[ "res://.import/failure.png-f9cfecde7ff09b4e4a894a74090b440a.image" ]
+
+[params]
+

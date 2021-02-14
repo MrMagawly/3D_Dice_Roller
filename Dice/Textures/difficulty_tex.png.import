@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/difficulty_tex.png-655e914c6c5e8d1fcc19f001e568fb8c.image"
+
+[deps]
+
+source_file="res://Dice/Textures/difficulty_tex.png"
+dest_files=[ "res://.import/difficulty_tex.png-655e914c6c5e8d1fcc19f001e568fb8c.image" ]
+
+[params]
+

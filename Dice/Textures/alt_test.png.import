@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/alt_test.png-8b5f51de428ed6acd6d463393f9026cf.image"
+
+[deps]
+
+source_file="res://Dice/Textures/alt_test.png"
+dest_files=[ "res://.import/alt_test.png-8b5f51de428ed6acd6d463393f9026cf.image" ]
+
+[params]
+

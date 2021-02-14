@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/triumph.png-26cf13635daba1b2b547de72b1fe61fa.image"
+
+[deps]
+
+source_file="res://Dice/Textures/Narrative_Dice_Symbols/triumph.png"
+dest_files=[ "res://.import/triumph.png-26cf13635daba1b2b547de72b1fe61fa.image" ]
+
+[params]
+

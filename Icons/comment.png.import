@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/comment.png-c6c80d73424f463589f7763630e8a704.image"
+
+[deps]
+
+source_file="res://Icons/comment.png"
+dest_files=[ "res://.import/comment.png-c6c80d73424f463589f7763630e8a704.image" ]
+
+[params]
+
