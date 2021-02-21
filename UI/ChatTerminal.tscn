@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Dice/ChatBox.gd" type="Script" id=1]
 [ext_resource path="res://UI/ScrollContainer.gd" type="Script" id=2]
 [ext_resource path="res://Dice/ChatArea.gd" type="Script" id=3]
 [ext_resource path="res://Dice/TextBox.gd" type="Script" id=4]
 [ext_resource path="res://UI/MainBox.gd" type="Script" id=5]
+[ext_resource path="res://UI/DiceList.gd" type="Script" id=6]
 
 [node name="ChatTerminal" type="Control"]
 anchor_right = 1.0
@@ -33,25 +34,311 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer"]
+[node name="DiceListButton" type="Button" parent="VBoxContainer2/HBoxContainer"]
 margin_right = 45.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 45, 45 )
-text = "D"
+text = "DICE"
 
-[node name="Button2" type="Button" parent="VBoxContainer2/HBoxContainer"]
-margin_left = 49.0
-margin_right = 94.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 45, 45 )
-text = "N"
+[node name="DiceList" type="PanelContainer" parent="VBoxContainer2"]
+margin_top = 49.0
+margin_right = 1329.0
+margin_bottom = 221.0
+rect_min_size = Vector2( 0, 75 )
+script = ExtResource( 6 )
 
-[node name="Button3" type="Button" parent="VBoxContainer2/HBoxContainer"]
-margin_left = 98.0
-margin_right = 143.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 45, 45 )
-text = "F"
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/DiceList"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1322.0
+margin_bottom = 165.0
+
+[node name="RegularBoxContainer" type="HBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer"]
+margin_right = 1315.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_right = 74.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D4"
+align = 1
+
+[node name="D4SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer2"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D6"
+align = 1
+
+[node name="D6SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer3"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D8"
+align = 1
+
+[node name="D8SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer3"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 234.0
+margin_right = 308.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer4"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D10"
+align = 1
+
+[node name="D10SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer4"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 312.0
+margin_right = 386.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer5"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D12"
+align = 1
+
+[node name="D12SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer5"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 390.0
+margin_right = 464.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer6"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D20"
+align = 1
+
+[node name="D20SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer6"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer"]
+margin_left = 468.0
+margin_right = 542.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer7"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "D100"
+align = 1
+
+[node name="D100SpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer7"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="NarrativeBoxContainer" type="HBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer"]
+margin_top = 46.0
+margin_right = 1315.0
+margin_bottom = 88.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_right = 74.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Boost"
+align = 1
+
+[node name="BoostSpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 78.0
+margin_right = 152.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer2"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Ability"
+align = 1
+
+[node name="AbilitySpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 156.0
+margin_right = 230.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer3"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Proficient"
+align = 1
+
+[node name="Proficiency" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer3"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 234.0
+margin_right = 308.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer4"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Setback"
+align = 1
+
+[node name="SetbackSpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer4"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 312.0
+margin_right = 386.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer5"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Difficulty"
+align = 1
+
+[node name="DifficultySpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer5"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 390.0
+margin_right = 464.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer6"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Challenge"
+align = 1
+
+[node name="ChallengeSpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer6"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer"]
+margin_left = 468.0
+margin_right = 542.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer7"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Force"
+align = 1
+
+[node name="ForceSpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer7"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="FateBoxContainer" type="HBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer"]
+margin_top = 92.0
+margin_right = 1315.0
+margin_bottom = 134.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/DiceList/VBoxContainer/FateBoxContainer"]
+margin_right = 74.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="VBoxContainer2/DiceList/VBoxContainer/FateBoxContainer/VBoxContainer"]
+margin_right = 74.0
+margin_bottom = 14.0
+text = "Fate"
+align = 1
+
+[node name="FateSpinBox" type="SpinBox" parent="VBoxContainer2/DiceList/VBoxContainer/FateBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 74.0
+margin_bottom = 42.0
+max_value = 5.0
+align = 1
+
+[node name="DiceSpawnButton" type="Button" parent="VBoxContainer2/DiceList/VBoxContainer"]
+margin_top = 138.0
+margin_right = 1315.0
+margin_bottom = 158.0
+text = "SPAWN DICE"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -141,6 +428,24 @@ caret_blink = true
 script = ExtResource( 4 )
 [connection signal="done_with_text" from="." to="VBoxContainer/MainBox/ScrollContainer/ChatBox" method="_on_ChatTerminal_done_with_text"]
 [connection signal="got_rolled_narrative_result" from="." to="VBoxContainer/MainBox/ScrollContainer/ChatBox" method="_on_ChatTerminal_got_rolled_narrative_result"]
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/DiceListButton" to="VBoxContainer2/DiceList" method="_on_DiceListButton_pressed"]
+[connection signal="dice_spawn_button_pressed" from="VBoxContainer2/DiceList" to="." method="_on_DiceList_dice_spawn_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer/D4SpinBox" to="VBoxContainer2/DiceList" method="_on_D4SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer2/D6SpinBox" to="VBoxContainer2/DiceList" method="_on_D6SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer3/D8SpinBox" to="VBoxContainer2/DiceList" method="_on_D8SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer4/D10SpinBox" to="VBoxContainer2/DiceList" method="_on_D10SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer5/D12SpinBox" to="VBoxContainer2/DiceList" method="_on_D12SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer6/D20SpinBox" to="VBoxContainer2/DiceList" method="_on_D20SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/RegularBoxContainer/VBoxContainer7/D100SpinBox" to="VBoxContainer2/DiceList" method="_on_D100SpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer/BoostSpinBox" to="VBoxContainer2/DiceList" method="_on_BoostSpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer2/AbilitySpinBox" to="VBoxContainer2/DiceList" method="_on_AbilitySpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer3/Proficiency" to="VBoxContainer2/DiceList" method="_on_Proficiency_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer4/SetbackSpinBox" to="VBoxContainer2/DiceList" method="_on_SetbackSpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer5/DifficultySpinBox" to="VBoxContainer2/DiceList" method="_on_DifficultySpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer6/ChallengeSpinBox" to="VBoxContainer2/DiceList" method="_on_ChallengeSpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/NarrativeBoxContainer/VBoxContainer7/ForceSpinBox" to="VBoxContainer2/DiceList" method="_on_ForceSpinBox_value_changed"]
+[connection signal="value_changed" from="VBoxContainer2/DiceList/VBoxContainer/FateBoxContainer/VBoxContainer/FateSpinBox" to="VBoxContainer2/DiceList" method="_on_FateSpinBox_value_changed"]
+[connection signal="pressed" from="VBoxContainer2/DiceList/VBoxContainer/DiceSpawnButton" to="VBoxContainer2/DiceList" method="_on_DiceSpawnButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopMenuBox/MarginContainer/HBoxContainer/ButtonChat" to="VBoxContainer/MainBox" method="_on_ButtonChat_pressed"]
 [connection signal="item_added" from="VBoxContainer/MainBox/ScrollContainer/ChatBox" to="VBoxContainer/MainBox/ScrollContainer" method="_on_ChatBox_item_added"]
 [connection signal="resized" from="VBoxContainer/MainBox/ScrollContainer/ChatBox" to="VBoxContainer/MainBox/ScrollContainer" method="_on_ChatBox_resized"]
