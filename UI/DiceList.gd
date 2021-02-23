@@ -24,6 +24,10 @@ func _on_DiceListButton_pressed():
 #TODO: Make sure spinbox numbers get reset to zero when the dice_spawn_button is pressed.
 func _on_DiceSpawnButton_pressed():
 	emit_signal("dice_spawn_button_pressed", regular_dice, narrative_dice, fate_dice)
+	
+	var spin_boxes = get_tree().get_nodes_in_group("SpinBoxes")
+	for i in range(spin_boxes.size()):
+		spin_boxes[i].get_line_edit().set_text("0")
 
 
 
