@@ -1,81 +1,99 @@
 extends Control
 
+
+var advantage 
+var darkside
+var despair
+var failure 
+var lightside
+var success 
+var threat
+var triumph
+
+
+func _ready():
+	advantage = load("res://Dice/Textures/Narrative_Dice_Symbols/AdvantageIcon.tscn")
+	despair = load("res://Dice/Textures/Narrative_Dice_Symbols/DespairIcon.tscn")
+	failure = load("res://Dice/Textures/Narrative_Dice_Symbols/FailureIcon.tscn")
+	success = load("res://Dice/Textures/Narrative_Dice_Symbols/SuccessIcon.tscn")
+	threat = load("res://Dice/Textures/Narrative_Dice_Symbols/ThreatIcon.tscn")
+	triumph = load("res://Dice/Textures/Narrative_Dice_Symbols/TriumphIcon.tscn")
+	
+
 func insert_text(typed_text):
 	var label_for_text = Label.new()
 	label_for_text.autowrap = true
 	label_for_text.text = typed_text
 	add_child(label_for_text)
 
+
+func insert_fate_results():
+	pass
+
+
+func insert_regular_results(result):
+	pass
+
+
 func insert_narrative_result(result):
-	var symbol_grid = GridContainer.new()
-	var advantage = load("res://Dice/Textures/Narrative_Dice_Symbols/AdvantageIcon.tscn")
-	var despair = load("res://Dice/Textures/Narrative_Dice_Symbols/DespairIcon.tscn")
-	var failure = load("res://Dice/Textures/Narrative_Dice_Symbols/FailureIcon.tscn")
-	var success = load("res://Dice/Textures/Narrative_Dice_Symbols/SuccessIcon.tscn")
-	var threat = load("res://Dice/Textures/Narrative_Dice_Symbols/ThreatIcon.tscn")
-	var triumph = load("res://Dice/Textures/Narrative_Dice_Symbols/TriumphIcon.tscn")
-	var a_count = 0 
-	var d_count = 0
-	var dr_count = 0
-	var f_count = 0
-	var l_count = 0
-	var s_count = 0
-	var th_count = 0
-	var tr_count = 0
-	symbol_grid.set_columns(7)
+	var advantages = 0
+	var despairs = 0
+	var difficulties = 0
+	var failures = 0
+	var lightsides = 0
+	var darksides = 0
+	var successes = 0
+	var threats = 0
+	var triumphs = 0
 	
 	var i = 0
 	while i < result.length():
 		match result.substr(i, 1):
 			"A":
-				a_count += 1
+				advantages += 1
 			"D":
-				d_count += 1
+				despairs += 1
 			"F":
-				f_count += 1
+				failures += 1
 			"S":
-				s_count += 1
+				successes += 1
 			"t":
-				th_count += 1
+				threats += 1
 			"T":
-				tr_count += 1
+				triumphs += 1
 			"d":
-				dr_count += 1
+				darksides += 1
 			"L":
-				l_count += 1
+				lightsides += 1
 		i += 1
 	
-	if s_count > f_count:
-		s_count -= f_count
-		f_count = 0
+	if successes > failures:
+		successes -= failures
+		failures = 0
 	else:
-		f_count -= s_count
-		s_count = 0
+		failures -= successes
+		successes = 0
 	
-	if a_count > th_count:
-		a_count -= th_count
-		th_count = 0
+	if advantages > threats:
+		advantages -= threats
+		threats = 0
 	else:
-		th_count -= a_count
-		a_count = 0
+		threat -= advantages
+		advantages = 0
 	
-	while s_count > 0:
-		symbol_grid.add_child(success.instance())
-		s_count -= 1
-	while f_count > 0:
-		symbol_grid.add_child(failure.instance())
-		f_count -= 1
-	while a_count > 0:
-		symbol_grid.add_child(advantage.instance())
-		a_count -= 1
-	while th_count > 0:
-		symbol_grid.add_child(threat.instance())
-		th_count -= 1
-	while tr_count > 0:
-		symbol_grid.add_child(triumph.instance())
-		tr_count -= 1
-	while d_count > 0:
-		symbol_grid.add_child(despair.instance())
-		d_count -= 1
+	var symbol_grid = GridContainer.new()
+	symbol_grid.set_columns(7)
+	
+	push_to_symbol_grid(symbol_grid, success, successes)
+	push_to_symbol_grid(symbol_grid, failure, failures)
+	push_to_symbol_grid(symbol_grid, advantage, advantages)
+	push_to_symbol_grid(symbol_grid, threat, threats)
+	push_to_symbol_grid(symbol_grid, triumph, triumphs)
+	push_to_symbol_grid(symbol_grid, despair, despairs)
 	
 	add_child(symbol_grid)
+
+func push_to_symbol_grid(grid, symbol, count):
+	while count > 0:
+		grid.add_child(symbol.instance())
+		count -= 1
