@@ -46,8 +46,7 @@ func insert_narrative_result(result):
 	var threats = 0
 	var triumphs = 0
 	
-	var i = 0
-	while i < result.length():
+	for i in result.length():
 		match result.substr(i, 1):
 			"A":
 				advantages += 1
@@ -65,7 +64,6 @@ func insert_narrative_result(result):
 				darksides += 1
 			"L":
 				lightsides += 1
-		i += 1
 	
 	if successes > failures:
 		successes -= failures
@@ -94,6 +92,5 @@ func insert_narrative_result(result):
 	add_child(symbol_grid)
 
 func push_to_symbol_grid(grid, symbol, count):
-	while count > 0:
+	for i in count:
 		grid.add_child(symbol.instance())
-		count -= 1
