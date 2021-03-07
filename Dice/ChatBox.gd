@@ -4,6 +4,7 @@ signal window_size_changed
 signal done_with_text
 signal got_rolled_fate_result
 signal got_rolled_narrative_result
+signal got_rolled_standard_result
 signal got_dice_to_spawn
 
 var command_called = false
@@ -98,3 +99,7 @@ func _on_DiceList_dice_spawn_button_pressed(regular_dice, narrative_dice, fate_d
 
 func _on_DiceHolder_rolled_fate(result):
 	emit_signal("got_rolled_fate_result", result)
+
+
+func _on_DiceHolder_rolled_standard(result):
+	emit_signal("got_rolled_standard_result", result)

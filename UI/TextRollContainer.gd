@@ -21,12 +21,12 @@ func insert_fate_result(result):
 	insert_text(String(total))
 
 
-func insert_regular_result(result):
+func insert_standard_result(result):
 	var total = 0
 	
 	for i in result.length():
 		var str_part = result.substr(i, 1)
-		if str_part.is_valid_integer(str_part):
+		if str_part.is_valid_integer():
 			total += int(str_part)
 	
 	insert_text(String(total))

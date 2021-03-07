@@ -4,6 +4,7 @@ signal rolled_standard
 signal rolled_fate
 signal rolled_narrative
 
+var d_four_load
 var d_six_load
 var d_eight_load
 var d_ten_load
@@ -22,7 +23,7 @@ var dice_finished_count
 var dice_results
 
 func _ready():
-	#d_four_load = load("res://Dice/Scenes/DFour.tscn")
+	d_four_load = load("res://Dice/Scenes/DFour.tscn")
 	d_six_load = load("res://Dice/Scenes/DSix.tscn")
 	d_eight_load = load("res://Dice/Scenes/DEight.tscn")
 	d_ten_load = load("res://Dice/Scenes/DTen.tscn")
@@ -38,8 +39,6 @@ func _ready():
 	d_force_load = load("res://Dice/Scenes/Force.tscn")
 	dice_finished_count = 0
 	dice_results = ""
-	
-	#die = get_children()
 
 func _on_dice_finished_rolling(result, type):
 	dice_finished_count += 1
@@ -60,7 +59,7 @@ func _on_dice_finished_rolling(result, type):
 
 
 func _on_ChatTerminal_got_dice_to_spawn(regular_dice, narrative_dice, fate_dice):
-	#spawn_dice(d_four_load, regular_dice.D4)
+	spawn_dice(d_four_load, regular_dice.D4)
 	spawn_dice(d_six_load, regular_dice.D6)
 	spawn_dice(d_eight_load, regular_dice.D8)
 	spawn_dice(d_ten_load, regular_dice.D10)

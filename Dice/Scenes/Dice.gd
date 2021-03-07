@@ -27,14 +27,12 @@ func _integrate_forces(state):
 	if go_to_hand:
 		if hand_position.length() <= 4.0:
 			set_linear_velocity(hand_position)
-			#set_angular_velocity(hand_position)
 		else:
 			set_linear_velocity(hand_position * 5)
-			#set_angular_velocity(hand_position * 5)
 	elif !go_to_hand and linear_velocity.length() > 0.9:
 		linear_velocity -= Vector3(0, 4, 0)
 	else:
-		gravity_scale = 1
+		gravity_scale = 3
 		if linear_velocity.length() < 0.001 and angular_velocity.length() < 0.001:
 			if has_rolled == true:
 				stopped_rolling = true
