@@ -39,7 +39,7 @@ func _ready():
 	dice_finished_count = 0
 	dice_results = ""
 	
-	die = get_children()
+	#die = get_children()
 
 func _on_dice_finished_rolling(result, type):
 	dice_finished_count += 1
@@ -75,6 +75,7 @@ func _on_ChatTerminal_got_dice_to_spawn(regular_dice, narrative_dice, fate_dice)
 	spawn_dice(d_challenge_load, narrative_dice.Challenge)
 	spawn_dice(d_force_load, narrative_dice.Force)
 	spawn_dice(d_fate_load, fate_dice)
+	die = get_children()
 
 func spawn_dice(dice_load, count):
 	for i in range(count):
