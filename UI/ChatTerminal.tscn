@@ -451,6 +451,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="done_with_text" from="." to="VBoxContainer/MainBox/ScrollContainer/ChatBox" method="_on_ChatTerminal_done_with_text"]
+[connection signal="got_rolled_fate_result" from="." to="VBoxContainer/MainBox/ScrollContainer/ChatBox" method="_on_ChatTerminal_got_rolled_fate_result"]
 [connection signal="got_rolled_narrative_result" from="." to="VBoxContainer/MainBox/ScrollContainer/ChatBox" method="_on_ChatTerminal_got_rolled_narrative_result"]
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/DiceListButton" to="VBoxContainer2/DiceList" method="_on_DiceListButton_pressed"]
 [connection signal="dice_spawn_button_pressed" from="VBoxContainer2/DiceList" to="." method="_on_DiceList_dice_spawn_button_pressed"]

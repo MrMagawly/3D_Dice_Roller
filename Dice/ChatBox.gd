@@ -2,6 +2,7 @@ extends Control
 
 signal window_size_changed
 signal done_with_text
+signal got_rolled_fate_result
 signal got_rolled_narrative_result
 signal got_dice_to_spawn
 
@@ -93,3 +94,7 @@ func _on_DiceHolder_rolled_narrative(result):
 
 func _on_DiceList_dice_spawn_button_pressed(regular_dice, narrative_dice, fate_dice):
 	emit_signal("got_dice_to_spawn", regular_dice, narrative_dice, fate_dice)
+
+
+func _on_DiceHolder_rolled_fate(result):
+	emit_signal("got_rolled_fate_result", result)

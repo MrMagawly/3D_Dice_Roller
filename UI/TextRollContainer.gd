@@ -8,11 +8,20 @@ func insert_text(typed_text):
 	add_child(label_for_text)
 
 
-func insert_fate_results():
-	pass
+func insert_fate_result(result):
+	var total = 0
+	
+	for i in result.length():
+		match result.substr(i, 1):
+			"p":
+				total += 1
+			"m":
+				total -= 1
+	
+	insert_text(String(total))
 
 
-func insert_regular_results(result):
+func insert_regular_result(result):
 	pass
 
 
