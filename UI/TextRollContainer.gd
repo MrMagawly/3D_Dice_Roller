@@ -1,25 +1,6 @@
 extends Control
 
 
-var advantage 
-var darkside
-var despair
-var failure 
-var lightside
-var success 
-var threat
-var triumph
-
-
-func _ready():
-	advantage = load("res://Dice/Textures/Narrative_Dice_Symbols/AdvantageIcon.tscn")
-	despair = load("res://Dice/Textures/Narrative_Dice_Symbols/DespairIcon.tscn")
-	failure = load("res://Dice/Textures/Narrative_Dice_Symbols/FailureIcon.tscn")
-	success = load("res://Dice/Textures/Narrative_Dice_Symbols/SuccessIcon.tscn")
-	threat = load("res://Dice/Textures/Narrative_Dice_Symbols/ThreatIcon.tscn")
-	triumph = load("res://Dice/Textures/Narrative_Dice_Symbols/TriumphIcon.tscn")
-	
-
 func insert_text(typed_text):
 	var label_for_text = Label.new()
 	label_for_text.autowrap = true
@@ -76,10 +57,17 @@ func insert_narrative_result(result):
 		advantages -= threats
 		threats = 0
 	else:
-		threat -= advantages
+		threats -= advantages
 		advantages = 0
 	
+	var advantage = load("res://Dice/Textures/Narrative_Dice_Symbols/AdvantageIcon.tscn")
+	var despair = load("res://Dice/Textures/Narrative_Dice_Symbols/DespairIcon.tscn")
+	var failure = load("res://Dice/Textures/Narrative_Dice_Symbols/FailureIcon.tscn")
+	var success = load("res://Dice/Textures/Narrative_Dice_Symbols/SuccessIcon.tscn")
+	var threat = load("res://Dice/Textures/Narrative_Dice_Symbols/ThreatIcon.tscn")
+	var triumph = load("res://Dice/Textures/Narrative_Dice_Symbols/TriumphIcon.tscn")
 	var symbol_grid = GridContainer.new()
+	
 	symbol_grid.set_columns(7)
 	
 	push_to_symbol_grid(symbol_grid, success, successes)
